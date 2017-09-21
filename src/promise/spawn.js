@@ -25,7 +25,7 @@ export default function (cmd, subcmd = [], options = {}) {
                 stdout: concat(stdout),
                 stderr: concat(stderr)
             };
-            if (code) {
+            if (code != 0 && code != 1) {
                 reject(result);
             } else {
                 resolve(result);
